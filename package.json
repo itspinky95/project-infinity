@@ -1,6 +1,6 @@
 {
   "name": "Project infinity",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
