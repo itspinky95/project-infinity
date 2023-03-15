@@ -3,7 +3,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getStorage } from 'firebase/storage';
 import { getFirestore } from 'firebase/firestore/lite';
 import { getAnalytics } from "firebase/analytics";
-import { firebaseConfig } from '../config/firebase.js/'
+import firebaseConfig from './config/firebase';
 import { getPerformance } from "firebase/performance";
 import { getFunctions } from "firebase/functions";
 
