@@ -12,7 +12,9 @@ import {
   faHome,
   faBars,
   faEnvelope,
+  faUser,
   faClose,
+  faGauge,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom'
 
@@ -21,19 +23,26 @@ const Sidebar = () => {
 
   return (
     <div className="nav-bar">
-      <Link 
+      <Link
         className="logo"
         to="/"
         onClick={() => setShowNav(false)}>
         <img src={LogoS} alt="Logo" />
       </Link>
       <nav className={showNav ? 'mobile-show' : ''}>
-        <NavLink 
+        <NavLink
           exact="true"
           activeclassname="active"
           to="/"
           onClick={() => setShowNav(false)}>
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+        </NavLink>
+        <NavLink
+          activeclassname="active"
+          className="about-link"
+          to="/about"
+          onClick={() => setShowNav(false)}>
+          <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
         </NavLink>
         <NavLink
           activeclassname="active"
@@ -43,7 +52,7 @@ const Sidebar = () => {
         >
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>
-        <FontAwesomeIcon 
+        <FontAwesomeIcon
           onClick={() => setShowNav(false)}
           icon={faClose}
           color="#ffd700"
@@ -90,15 +99,26 @@ const Sidebar = () => {
             />
           </a>
         </li>
+        <li>
+          <NavLink
+            activeclassname="active"
+            className="dashboard-link"
+            to="/dashboard"
+            onClick={() => setShowNav(false)}
+          >
+            <FontAwesomeIcon icon={faGauge} color="#4d4d4e" />
+          </NavLink>
+        </li>
       </ul>
-      
-      <FontAwesomeIcon 
-          onClick={() => setShowNav(true)}
-          icon={faBars}
-          color="#ffd700"
-          size="3x"
-          className='hamburger-icon' />
+
+      <FontAwesomeIcon
+        onClick={() => setShowNav(true)}
+        icon={faBars}
+        color="#ffd700"
+        size="3x"
+        className='hamburger-icon' />
     </div>
+
   )
 }
 
